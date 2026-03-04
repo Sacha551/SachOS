@@ -31,7 +31,6 @@ RUN rm /opt && mkdir /opt
 
 RUN dnf5 -y install fedora-workstation-repositories
 RUN dnf5 config-manager setopt google-chrome.enabled=1
-RUN dnf5 -y install google-chrome-stable
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
