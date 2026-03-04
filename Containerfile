@@ -29,7 +29,7 @@ FROM ghcr.io/ublue-os/bluefin:stable
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-RUN dnf5 install fedora-workstation-repositories
+RUN dnf5 install -y fedora-workstation-repositories
 RUN dnf5 config-manager setopt google-chrome.enabled=1
 RUN dnf5 install -y google-chrome-stable
 
