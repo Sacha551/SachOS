@@ -29,9 +29,8 @@ RUN rm /opt && mkdir /opt
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-RUN dnf5 -y install fedora-workstation-repositories
-RUN dnf5 config-manager setopt google-chrome.enabled=1
-
+RUN dnf5 -y install https://github.com/rustdesk/rustdesk/releases/download/1.4.6/rustdesk-1.4.6-0.x86_64.rpm
+    dnf5 -y install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_6
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
