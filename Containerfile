@@ -33,8 +33,7 @@ RUN dnf5 -y install https://github.com/rustdesk/rustdesk/releases/download/1.4.6
 RUN dnf5 -y install https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
 RUN wget -P /tmp "https://repo.protonvpn.com/fedora-$(cat /etc/fedora-release | cut -d' ' -f 3)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.3-1.noarch.rpm"
 RUN cd /tmp && dnf5 -y install ./protonvpn-stable-release-1.0.3-1.noarch.rpm
-RUN dnf5 check-update --refresh 
-RUN dnf5 -y  install proton-vpn-gnome-desktop
+RUN dnf5 -y install proton-vpn-gnome-desktop
  
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
