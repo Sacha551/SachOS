@@ -30,8 +30,8 @@ RUN rm /opt && mkdir /opt
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 RUN dnf5 -y install https://github.com/rustdesk/rustdesk/releases/download/1.4.6/rustdesk-1.4.6-0.x86_64.rpm
-RUN dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/protonvpn-stable.repo \
-    dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/google-chrome.repo
+# RUN dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/protonvpn-stable.repo
+RUN dnf dnf config-manager addrepo --from-repofile=/etc/yum.repos.d/google-chrome.repo
 
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
